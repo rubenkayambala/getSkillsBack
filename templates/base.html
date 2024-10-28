@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">   
+    <title>Get Skills CLass | Vitrine</title>
+</head>
+
+<body>
+    <div class="process">
+        <a href="#" class="icon-close" aria-label="icone close"><i class="bi bi-x"></i></a>
+        <div class="content">
+            <h2>Comment procéder</h2>
+            <p>Voulez-vous suivre une formation</p>
+            <a href="#" class="btnLoginPopup">S'inscrire</a>
+            <hr>
+            <p>Etes-vous déjà étudiant de la GET SKILLS CLASS ?</p>
+            <a href="UserInterface/carteApprenant.html">Obtenir sa carte d'apprenant</a>
+            <hr>
+            <p>Avez-vous suivi nos formations</p>
+            <a href="UserInterface/certificat/certif.html">Souscrire pour avoir le certificat</a>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="form-box" id="myForm">
+            <h2>inscrivez-vous</h2>
+            <p style="text-align: center; color: #000;">Suivez ces étapes pour rejoindre la GET SKILLS CLASS</p>
+            <form action="#">
+                <div class="input-box"> 
+                    <input type="text" name="name" id="name" autocomplete="name" required placeholder="Votre nom">
+                    <label for="name">Nom</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="text" name="midname" id="midname" autocomplete="midname" required placeholder="Votre post-nom">
+                    <label for="midname">Post-nom</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="first" id="first" autocomplete="first" required placeholder="Votre prénom">
+                    <label for="first">Prénom</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="date" name="birth" id="birth" autocomplete="birth" required placeholder="Votre date de naissance">
+                    <label for="birth">Date de naissance</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="text" name="adresse" id="adresse" autocomplete="adresse" required placeholder="Votre résidence">
+                    <label for="adresse">Adresse actuelle</label> 
+                </div>
+                <div class="input-box">
+                    <input type="text" name="user" id="user" autocomplete="user" required placeholder="Votre nom d'utilisateur">
+                    <label for="user">Nom d'utilisateur</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="Votre adresse mail">
+                    <label for="email">Adresse Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="num" id="num" autocomplete="num" required placeholder="Votre numéro de téléphone">
+                    <label for="num">Téléphone</label>
+                </div>
+                <button type="submit" class="btn btnLogin-popup">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="connexion">
+        <div class="content">
+            <h2>Connectez vous</h2>
+            <form action="">
+                <input type="text" name="username" id="username" placeholder="Votre nom d'utilisateur">
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="container">
+            <div class="links">
+                <ul>
+                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="text">
+                <p class="icon"><i class="bi bi-house-fill"></i></p>
+                <p>Kinshasa, institut réligion, Unikin</p>
+            </div>
+            <div class="text">
+                <p class="icon"><i class="bi bi-envelope-fill"></i></p>
+                <p>getskillsclass@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="burger-menu" id="burger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <a href="{% url 'home' %}"><img src="/static/images/Convertis/logo_get_skills_class.png" alt=""></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li><a href="#about">A propos</a></li>
+                    <li><a href="#formations">Formations</a></li>
+                    <li><a href="#souvenirs">Souvenir</a></li>
+                    <li><a href="#message">Contact</a></li>
+                    <li><a href="{% url 'dash' %}">Manage</a></li>
+                </ul>
+                <a href="#" class="btn" id="connection" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;"><i class="bi bi-person-circle"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="custom-alert" id="customAlert">
+        <h2>Notification</h2>
+        <hr>
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="dialogue" id="dialogue">
+        <h2>Notification</h2>
+        <hr>
+        <p>
+            Assurez vous d'être inscrit(e) pour pouvoir suivre ce cours.
+            Cliquez sur <span>Rejoindre</span> pour vous inscrire.
+            Cliquez sur OK pour quitter
+        </p>
+        <button onclick="fermerBoiteDeDialogue()">OK</button>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="container">
+            <div class="final">
+                <ul>
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                </ul>
+                <hr style="height: 1px; color: #fff; width: 100%;">
+                <p>&copy; 2024 GET SKILLS CLASS, Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" class="btn btn-primary">&uparrow;</button>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+
+        //Afficher le bouton retour en haut
+        window.onscroll = function(){scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // Menu burger
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // Lorsque l'utilisateur clique sur le bouton, retour en haut
+        function topFunction() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Ouvrir et fermer le formulaire d'inscription
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapper = document.querySelector('.wrapper');
+            const process = document.querySelector('.process');
+            const btnJoin = document.querySelector('.btnJoin');
+            const btnPopup = document.querySelector('.btnLoginPopup');
+            const iconClose = document.querySelector('.icon-close');
+
+            btnJoin.addEventListener('click', () => {
+                process.classList.add('active-process');
+            });
+
+            btnPopup.addEventListener('click', () => {
+                wrapper.classList.add('active-popup');
+                process.classList.remove('active-process')
+            });
+
+            iconClose.addEventListener('click', () => {
+                wrapper.classList.remove('active-popup');
+            });
+        });
+
+        // Ouvrir et fermer le formulaire de connexion
+        document.addEventListener('DOMContentLoaded', () => {
+            const connect = document.querySelector('.connexion');
+            const btnconnect = document.getElementById('connection');
+
+            btnconnect.addEventListener('click', () => {
+            connect.classList.toggle('active-connect');
+            });
+        });
+
+        // Vérification du remplissage des champs et affichage de la boîte de dialogue
+        let formToSubmit = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Empêche l'envoi du formulaire
+
+                let form = event.target;
+                let allFilled = true;
+                let fields = form.querySelectorAll('input[type="text"], input[type="email"], input[type="date"]');
+
+                fields.forEach(function(field) {
+                    if (!field.value) {
+                        allFilled = false;
+                        field.style.borderColor = 'red'; // Met en évidence les champs non remplis
+                    } else {
+                        field.style.borderColor = ''; // Réinitialise la bordure si le champ est rempli
+                    }
+                });
+
+                if (allFilled) {
+                    formToSubmit = form;
+                    showAlert('Bravo ! Nous vous remercions pour votre inscription. \n Nous avons envoyé un message de confirmation dans votre mail. \n Cliquez sur OK pour quitter');
+                } else {
+                    showAlert('Veuillez remplir tous les champs.');
+                }
+            });
+        });
+
+        function showAlert(message) {
+            document.getElementById('alertMessage').innerText = message;
+            document.getElementById('customAlert').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            if (formToSubmit) {
+                formToSubmit.submit(); // Soumet le formulaire après la fermeture de l'alerte
+                formToSubmit = null;
+            }
+        }
+
+        // Message pour les utilisateurs non inscrits
+        function afficherBoiteDeDialogue() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('dialogue').style.display = 'block';
+        }
+
+        function fermerBoiteDeDialogue() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('dialogue').style.display = 'none';
+        }
+
+        //Les vidéos
+        var MaMusique1 = document.getElementById("MaMusique1") 
+        var MaMusique2 = document.getElementById("MaMusique2")
+        var MaMusique3 = document.getElementById("MaMusique3")
+        var MaMusique4 = document.getElementById("MaMusique4")
+        var btnplay1 = document.getElementById("btnplay1")
+        var btnplay2 = document.getElementById("btnplay2")
+        var btnplay3 = document.getElementById("btnplay3")
+        var btnplay4 = document.getElementById("btnplay4")
+
+        btnplay1.onclick = function(){
+            if(MaMusique1.paused){
+                    MaMusique1.play();
+                    btnplay1.src = "asset/images/bouton-pause.png"
+            } else{
+                    MaMusique1.pause();
+                    btnplay1.src = "asset/images/bouton-jouer.png"
+            }
+        }
+        btnplay2.onclick = function(){
+            if(MaMusique2.paused){
+                    MaMusique2.play();
+                    btnplay2.src = "asset/images/bouton-pause.png"
+            } else{
+                    MaMusique2.pause();
+                    btnplay2.src = "asset/images/bouton-jouer.png"
+            }
+        }
+        btnplay3.onclick = function(){
+            if(MaMusique3.paused){
+                    MaMusique3.play();
+                    btnplay3.src = "asset/images/bouton-pause.png"
+            } else{
+                    MaMusique3.pause();
+                    btnplay3.src = "asset/images/bouton-jouer.png"
+            }
+        }
+        btnplay4.onclick = function(){
+            if(MaMusique4.paused){
+                    MaMusique4.play();
+                    btnplay4.src = "asset/images/bouton-pause.png"
+            } else{
+                    MaMusique4.pause();
+                    btnplay4.src = "asset/images/bouton-jouer.png"
+            }
+        }
+    </script>
+
+</body>
+</html>

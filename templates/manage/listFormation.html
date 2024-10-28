@@ -1,0 +1,33 @@
+
+    <div class="formations-list">
+        {% if formations %}
+        <div class="d-flex align-items-center">
+            <h3 class="p-4 text-center">Formation</h3>
+            <a href="{% url 'addFormation' %}">Ajouter</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>
+                        <td>Image</td>
+                        <td>Dénomination</td>
+                        <td>Actions</td>
+                    </th>
+                </thead>
+                <tbody>
+                    {% for item in formations %}
+                    <tr>
+                        <td></td>
+                        <td><img src="{{item.image.url}}" width="50" height="50" alt="{{item.name}}"></td>
+                        <td>{{item.name}}</td>
+                        <td><a href="{% url 'updateFormation' item.pk %}" class="btn btn-sm btn-primary">Mofifier</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <h3>Formations</h3>
+        <h4 class="text-muted"><i>Aucune formation enregistrée pour l'instant, <a href="{% url 'addFormation' %}">Ajouter une formation</a></i></h4>
+        {% endif %}
+    </div>
