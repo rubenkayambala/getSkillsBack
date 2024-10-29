@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import CustomUser
 
 PROMOTION = (
     ('promotion1', 'Promotion 1'),
@@ -22,3 +23,23 @@ class Album(models.Model):
 
     def __str__(self):
         return f'{self.promotion} - {self.file}'
+
+class Carte(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    matricule = models.CharField(max_length=10)
+    full_name = models.CharField(max_length=80)
+    picture = models.FileField(upload_to='picture/')
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.full_name} - {self.matricule}'
+
+class Certificat(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    matricule = models.CharField(max_length=10)
+    full_name = models.CharField(max_length=80)
+    picture = models.FileField(upload_to='picture/')
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.full_name} - {self.matricule}'
