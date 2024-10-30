@@ -8,7 +8,11 @@
             <p style="color: #fff;">
                 EXPLORER LES TECHNOLOGIE DE L'INFORMATION ET DE LA COMMUNICATION 
             </p>
-            <button class="btnJoin">Rejoindre</button>
+
+            {% if request.user.is_authenticated %}
+            {% else %}
+            <button type="button" class="btnJoin">Nous réjoindre</button>
+            {% endif %}
         </div>
     </section>
 

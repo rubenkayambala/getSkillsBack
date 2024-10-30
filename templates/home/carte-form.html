@@ -1,0 +1,49 @@
+{% extends '../base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="content1">
+            <div class="form-box">
+                <form action="{% url 'home:carte_form' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Enregistrement pour le certificat</h1>
+                    <div class="input-box">
+                        <label for="mat">Matricule : </label>
+                        <input type="text" id="id_matricule" name="matricule" maxlength="10" required placeholder="Matricule">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="nom">Nom complet : </label>
+                        <input type="text" id="id_full_name" name="full_name" maxlength="80" required placeholder="Nom, Post-nom et Prénom">
+                    </div>
+            
+                    <div class="input-box">
+                        <label for="image">Image : </label>
+                        <input type="file" id="id_picture" name="picture" accept="image/*" required>
+                    </div>
+            
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- {{form}} -->
+    <script>
+        document.getElementById('apprenantForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nom = document.getElementById('nom').value;
+            const mat = document.getElementById('mat').value;
+            const image = document.getElementById('image').files[0];
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                localStorage.setItem('nom', nom);
+                localStorage.setItem('mat', mat);
+                localStorage.setItem('image', reader.result);
+
+                window.location.href= 'certificat.html';
+            };
+            if (image) {
+                reader.readAsDataURL(image);
+            }
+        });
+    </script>
+{% endblock %}

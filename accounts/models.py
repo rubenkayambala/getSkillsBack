@@ -7,7 +7,7 @@ class CustomUser(AbstractUser):
     birthday = models.CharField(('birthday'), max_length=15)
     adress = models.CharField(('adress'), max_length=100)
     phone = models.CharField(('phone'), max_length=15)
-    picture = models.ImageField(('picture'), upload_to='picture')
+    picture = models.ImageField(('picture'), upload_to='picture/')
 
     objects = UserManager()
 

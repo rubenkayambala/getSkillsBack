@@ -5,79 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/static/css/styles.css">   
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/certificat.css">
     <title>Get Skills CLass | Vitrine</title>
 </head>
 
-<body>
-    <div class="process">
-        <a href="#" class="icon-close" aria-label="icone close"><i class="bi bi-x"></i></a>
-        <div class="content">
-            <h2>Comment procéder</h2>
-            <p>Voulez-vous suivre une formation</p>
-            <a href="#" class="btnLoginPopup">S'inscrire</a>
-            <hr>
-            <p>Etes-vous déjà étudiant de la GET SKILLS CLASS ?</p>
-            <a href="UserInterface/carteApprenant.html">Obtenir sa carte d'apprenant</a>
-            <hr>
-            <p>Avez-vous suivi nos formations</p>
-            <a href="UserInterface/certificat/certif.html">Souscrire pour avoir le certificat</a>
-        </div>
+{% if not request.user.is_authenticated %}
+<div class="process" style="z-index: 999;">
+    <a href="#" class="icon-close" aria-label="icone close"><i class="bi bi-x"></i></a>
+    <div class="content">
+        <h2>Comment procéder</h2>
+        <p>Voulez-vous suivre une formation</p>
+        <a href="#" class="btnLoginPopup">S'inscrire</a>
     </div>
-    
-    <div class="wrapper">
-        <div class="form-box" id="myForm">
-            <h2>inscrivez-vous</h2>
-            <p style="text-align: center; color: #000;">Suivez ces étapes pour rejoindre la GET SKILLS CLASS</p>
-            <form action="#">
-                <div class="input-box"> 
-                    <input type="text" name="name" id="name" autocomplete="name" required placeholder="Votre nom">
-                    <label for="name">Nom</label>
-                </div>
-                <div class="input-box"> 
-                    <input type="text" name="midname" id="midname" autocomplete="midname" required placeholder="Votre post-nom">
-                    <label for="midname">Post-nom</label>
-                </div>
-                <div class="input-box">
-                    <input type="text" name="first" id="first" autocomplete="first" required placeholder="Votre prénom">
-                    <label for="first">Prénom</label>
-                </div>
-                <div class="input-box"> 
-                    <input type="date" name="birth" id="birth" autocomplete="birth" required placeholder="Votre date de naissance">
-                    <label for="birth">Date de naissance</label>
-                </div>
-                <div class="input-box"> 
-                    <input type="text" name="adresse" id="adresse" autocomplete="adresse" required placeholder="Votre résidence">
-                    <label for="adresse">Adresse actuelle</label> 
-                </div>
-                <div class="input-box">
-                    <input type="text" name="user" id="user" autocomplete="user" required placeholder="Votre nom d'utilisateur">
-                    <label for="user">Nom d'utilisateur</label>
-                </div>
-                <div class="input-box">
-                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="Votre adresse mail">
-                    <label for="email">Adresse Email</label>
-                </div>
-                <div class="input-box">
-                    <input type="text" name="num" id="num" autocomplete="num" required placeholder="Votre numéro de téléphone">
-                    <label for="num">Téléphone</label>
-                </div>
-                <button type="submit" class="btn btnLogin-popup">S'inscrire</button>
-            </form>
-        </div>
-    </div>
-    
-    <div class="connexion">
-        <div class="content">
-            <h2>Connectez vous</h2>
-            <form action="">
-                <input type="text" name="username" id="username" placeholder="Votre nom d'utilisateur">
-                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
-                <button type="submit">Connexion</button>
-            </form>
-        </div>
-    </div>
+</div>
+{% endif %}
 
+{% if messages %}
+{% for m in messages %}
+<div style="position: absolute; text-align: center; padding: 10px; z-index: 99999;">
+    <small class="alert alert-succes">{{m}}</small>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if request.user.is_authenticated %}
+{% else %}
+<div class="wrapper">
+    <div class="form-box" id="myForm">
+        <h2>inscrivez-vous</h2>
+        <p style="text-align: center; color: #000;">Suivez ces étapes pour rejoindre la GET SKILLS CLASS</p>
+        <form action="{% url 'accounts:register' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-box"> 
+                <input type="text" name="last_name" id="name" autocomplete="name" required placeholder="Votre nom">
+                <label for="name">Nom</label>
+            </div>
+            <div class="input-box"> 
+                <input type="text" name="post_name" id="midname" autocomplete="midname" required placeholder="Votre post-nom">
+                <label for="midname">Post-nom</label>
+            </div>
+            <div class="input-box">
+                <input type="text" name="first_name" id="first" autocomplete="first" required placeholder="Votre prénom">
+                <label for="first">Prénom</label>
+            </div>
+            <div class="input-box"> 
+                <input type="date" name="birthday" id="birth" autocomplete="birth" required placeholder="Votre date de naissance">
+                <label for="birth">Date de naissance</label>
+            </div>
+            <div class="input-box"> 
+                <input type="text" name="adress" id="adresse" autocomplete="adresse" required placeholder="Votre résidence">
+                <label for="adresse">Adresse actuelle</label> 
+            </div>
+            <div class="input-box">
+                <input type="text" name="username" id="user" autocomplete="user" required placeholder="Votre nom d'utilisateur">
+                <label for="user">Nom d'utilisateur</label>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" id="email" autocomplete="email" required placeholder="Votre adresse mail">
+                <label for="email">Adresse Email</label>
+            </div>
+            <div class="input-box">
+                <input type="text" name="phone" id="phone" autocomplete="phone" required placeholder="Votre numéro de téléphone">
+                <label for="num">Téléphone</label>
+            </div>
+            <div class="input-box">
+                <input type="file" name="picture" id="picture" autocomplete="picture" required>
+                <label for="num">Photo</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" id="password1" autocomplete="password" required placeholder="Votre mot de passe">
+                <label for="password">Mot de passe</label>
+            </div>
+            <button type="submit" class="btn btnLogin-popup">S'inscrire</button>
+        </form>
+    </div>
+</div>
+
+<div class="connexion">
+    <div class="content">
+        <h2>Connectez vous</h2>
+        <form action="" method="post">
+            <input type="text" name="username_email" id="username" placeholder="Votre nom d'utilisateur">
+            <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+            <button type="submit">Connexion</button>
+            <p class="m-0 pt-2">ou</p>
+            <p class="py-2 m-0" id="btnJoin" style="cursor: pointer;"><u>nous réjoindre</u></p>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<body>
     <div class="navbar">
         <div class="container">
             <div class="links">
@@ -107,16 +126,24 @@
                     <div class="line"></div>
                     <div class="line"></div>
                 </div>
-                <a href="{% url 'home' %}"><img src="/static/images/Convertis/logo_get_skills_class.png" alt=""></a>
+                <a href="index.html"><img src="/static/images/contents/logo_get_skills_class.png" alt=""></a>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="#about">A propos</a></li>
                     <li><a href="#formations">Formations</a></li>
                     <li><a href="#souvenirs">Souvenir</a></li>
                     <li><a href="#message">Contact</a></li>
-                    <li><a href="{% url 'dash' %}">Manage</a></li>
                 </ul>
-                <a href="#" class="btn" id="connection" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;"><i class="bi bi-person-circle"></i></a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'accounts:profile' request.user.id %}" class="btn" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;">
+                    <i class="bi bi-person-circle"></i>
+                    <small>{{request.user.username}}</small>
+                </a>
+                {% else %}
+                <a href="#" class="btn" id="connection" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+                {% endif %}
             </nav>
         </div>
     </header>
@@ -192,6 +219,11 @@
             const btnJoin = document.querySelector('.btnJoin');
             const btnPopup = document.querySelector('.btnLoginPopup');
             const iconClose = document.querySelector('.icon-close');
+
+            const trigger = document.getElementById('btnJoin');
+            trigger.addEventListener('click', () => {
+                btnJoin.trigger('click');
+            });
 
             btnJoin.addEventListener('click', () => {
                 process.classList.add('active-process');

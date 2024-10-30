@@ -19,7 +19,7 @@ def Register(request):
             birthday=request.POST.get('birthday'),
             adress=request.POST.get('adress'),
             phone=request.POST.get('phone'),
-            picture=request.POST.get('picture'),
+            picture=request.FILES.get('picture'),
         )
         
         # Utilisez set_password pour hacher le mot de passe

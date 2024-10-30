@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/certificat.css">
+    <title>Carte</title>
+</head>
+<body>
+    <div class="container" style="padding: 20px 0;">
+        <div class="certificat" style="padding: 20px;">
+            <div class="content" style="text-align: center;">
+                <div class="row justify-content-center w-100">
+                    <div class="col-2">
+                        <div class="bravlogo">
+                            <img src="/static/images/contents/brave man ok_104331.png" alt="" width="120px">
+                        </div>
+                    </div>
+                    <div class="col-8 entete" style="display: flex; justify-content: space-around; align-items: center;">
+                        <div>
+                            <h1 style="font-size: 30px; text-align: center;">CERTIFICAT D'ACCOMPLISSEMENT</h1>
+                            <p style="font-size: 18px; color: #ff0000; border: 5px solid #949494;">BASE DU METIER DU TECHNICIEN INFORMATIQUE</p>
+                            <p style="color: #000; font-size: 10px;">Ce certificat atteste que : </p>
+                            <h5 id="nom" style="font-size: 35px;">{{request.user.last_name}} {{request.user.post_name}} {{request.user.first_name}}</h5>
+                            <h5 id="nom" style="font-size: 35px;">{{user.last_name}} {{user.post_name}} {{user.first_name}}</h5>
+                        </div>
+                        <img src="/static/images/contents/logo_get_skills_class.png" alt="" width="150px">
+                    </div>
+                </div>
+                
+                <div>
+                    <hr>
+                    <div class="motprofil" style="display: flex; justify-content: space-around; align-items: center; padding: 0 100px;">
+                        <!-- <img id="image" src="" alt="Carte de l'apprenant" style="width: 150px; height: 150px; object-fit: cover;"> -->
+                        <div>
+                            <P style="font-size: 16px; text-align: left;">
+                                A complété avec succès une formation approfondie en tant que technicien
+                                informatique, acquérant des compétences essentielles et pratiques 
+                            </P>
+                            <div class="formations">
+                                <ul>
+                                    <li>
+                                        <strong>MATERIEL INFORMATIQUE : </strong>Expertise en montage, 
+                                        diagnostic Et maintenance de composants PC, avec Une spécialisation 
+                                        Vérifie par Cisco.
+                                    </li>
+                                    <li>
+                                        <strong>UTILISATION AVANCEE DU TERMINAL : </strong>Compétences 
+                                        en gestion De Systèmes via ligne de commande pour l'administration 
+                                        et L'automatisation.
+                                    </li>
+                                    <li>
+                                        <strong>RÉSEAUX TCP IP : </strong>Aptitude à configurer et maintenir 
+                                        des Réseaux Informatiques, assurant une connectivité optimale.
+                                    </li>
+                                    <li>
+                                        <strong>DESIGN : </strong>capacité à créer des designs innovantes 
+                                        et esthétiques, adaptés aux besoins spécifiques des clients et 
+                                        des projets.
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <strong>EXCEL FONDAMENTAL : </strong>Maîtrise des fonctionnalités 
+                                        avancées D'Excel pour l'analyse de données et l'automatisation des 
+                                        processus.
+                                    </li>
+                                    <li>
+                                        <strong>SYSTEM D'EXPLOITATION UBUNTU : </strong>Administration de 
+                                        systèmes Linux, Garantissant la sécurité et la performance des 
+                                        infrastructures informatiques.
+                                    </li>
+                                    <li>
+                                        <strong>INTRODUCTION CYBERSECURITE : </strong>Connaissance des 
+                                        principes de la Cyber sécurité, avec une formation Vérifier par 
+                                        Cisco, pour protéger Les systèmes contre les menaces numériques.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-around; padding: 0 240px;">
+                        <p style="font-size: 12px; text-align: left;">
+                            Le titulaire a démontré une capacité à appliquer ces compétences 
+                            dans un contexte professionnel, prouvant son aptitude à soutenir 
+                            efficacement les infrastructures informatiques et à répondre aux 
+                            besoins technologiques des organisations modernes.
+                        </p>
+                    </div>
+                    <p style="font-size: 12px;">
+                        <strong>MATRICULE : </strong><span id="mat"></span>
+                    </p>
+                    <div class="textFond" style="display: flex; justify-content: space-around; align-items: center;">
+                        <p style="font-size: 10px;">
+                            Lieu de formation : Centre de l'institut de religion UNIKIN Campus
+                        </p>
+                        <div style="display: flex;">
+                            <img src="/static/images/contents/img1.jpg" alt="" width="40px" height="40px" style="margin-right: 10px;">
+                            <img src="/static/images/contents/img2.jpg" alt="" width="40px" height="40px" style="margin-right: 10px;">
+                            <img src="/static/images/contents/img3.jpg" alt="" width="40px" height="40px" style="margin-right: 10px;">
+                            <img src="/static/images/contents/img4.png" alt="" width="40px" height="40px" style="margin-right: 20px;">
+                            <img src="/static/images/contents/img5.png" alt="" width="40px" height="40px" style="margin-right: 20px;">
+                            <img src="/static/images/contents/img6.jpg" alt="" width="40px" height="40px" style="margin-right: 20px;">
+                            <img src="/static/images/contents/img7.png" alt="" width="40px" height="40px" style="margin-right: 20px;">
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <div>
+                            <h6>Ruben KAYAMBALA</h6>
+                            <p style="font-size: 10px;">Coordinateur programme D'études</p>
+                        </div>
+                        <p><strong>02 juillet 2024 au <br> 15 Septembre 2024</strong></p>
+                    </div>
+                </div>
+        </div>
+                </div>
+        <!-- <a href="#" class="btn" style="padding: 5px 15px; background-color: #ff0000; color: #fff; margin-top: 10px;">Imprimer</a>
+        <a href="certif.html" class="btn" style="padding: 5px 15px; background-color: #ff0000; color: #fff; margin-top: 10px;">Retour au formulaire</a> -->
+    </div>
+
+    <script>
+        document.getElementById('nom').textContent = localStorage.getItem('nom');
+        document.getElementById('mat').textContent = localStorage.getItem('mat');
+        document.getElementById('image').src = localStorage.getItem('image');
+    </script>
+</body>
+</html>

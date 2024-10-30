@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <title>GET SKILLS CLASS | Profil étudiant</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="links">
+                <ul>
+                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="text">
+                <p class="icon"><i class="bi bi-house-fill"></i></p>
+                <p>Kinshasa, institut réligion, Unikin</p>
+            </div>
+            <div class="text">
+                <p class="icon"><i class="bi bi-envelope-fill"></i></p>
+                <p>getskillsclass@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="{% url 'home:home' %}"><img src="/static/images/contents/logo_get_skills_class.png" alt="" width="70px"></a>
+                <p style="font-size: 25px; color: #000;">Profil étudiant</p>
+                <div style="align-items: center;">
+                    <!-- <a href="#" class="btn btn-sm btn-danger p-1" style="background-color: #ac0000 !important;">Imprimer mes certificat</a> &nbsp; &nbsp; -->
+                    <span style="font-size: 12px; color: #000;">{{profile.first_name}} {{profile.last_name}}</span>, &nbsp;
+                    <a href="{% url 'accounts:logout' %}"><small>deconnexion</small></a>
+                    <!-- <i class="bi bi-person-circle" style="font-size: 25px; padding: 5px 10px; background: none; color: #ac0000;"></i> -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="accueil">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="content1">
+                    <div>
+                        <h3>Projets</h3>
+                        <ul>
+                            <li>Projets pratiques <a href="#">Assister <i class="bi bi-link-45deg"></i></a></li>
+                            <li>Projets collaboratifs <a href="#">Assister <i class="bi bi-link-45deg"></i></a></li>
+                            <li>Projets de fin d'études <a href="#">Assister <i class="bi bi-link-45deg"></i></a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Atéliers</h3>
+                        <ul>
+                            <li>Atélier de codage <a href="#">Participer <i class="bi bi-link-45deg"></i></a></li>
+                            <li>Atélier du design <a href="#">Participer <i class="bi bi-link-45deg"></i></a></li>
+                            <li>Atélier de sécurité <a href="#">Participer <i class="bi bi-link-45deg"></i></a></li>
+                            <li>Atélier du développement personnel <a href="#">Participer <i class="bi bi-link-45deg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content2">
+                    <h3>Suggestion des cours</h3>
+                    <div class="contain">
+                        <div class="scrolling-wrapper">
+                            <div class="card">
+                                <i class="bi bi-laptop"></i>
+                                <h4>Informatique Générale</h4>
+                                <p>Niveau 1</p>
+                                <a href="#">Suivre</a>
+                            </div>
+                            <div class="card">
+                                <i class="bi bi-database"></i>
+                                <h4>Base des données</h4>
+                                <p>Niveau 2</p>
+                                <a href="#">Suivre</a>
+                            </div>
+                            <div class="card">
+                                <i class="bi bi-shield"></i>
+                                <h4>Sécurité Informatique</h4>
+                                <p>Niveau 2</p>
+                                <a href="#">Suivre</a>
+                            </div>
+                            <div class="card">
+                                <i class="bi bi-bar-chart"></i>
+                                <h4>Analyse</h4>
+                                <p>Niveau 2</p>
+                                <a href="#">Suivre</a>
+                            </div>
+                            <div class="card">
+                                <i class="bi bi-code-slash"></i>
+                                <h4>Programmation</h4>
+                                <p>Niveau 2</p>
+                                <a href="#">Suivre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="content3">
+                    <i class="bi bi-person-circle" id="profil"></i>
+                    <h6 style="cursor: pointer;" onclick="showCard()"><u>Voir ma carte</u></h6>
+                    {% if has_cert %}
+                    <h6 style="cursor: pointer;"><u><a href="{% url 'home:certif' profile.id %}">Voir mon certificat</a></u></h6>
+                    {% else %}
+                    <h6 style="cursor: pointer;" onclick="showNoCertif()"><u>Voir mon certificat</u></h6>
+                    {% endif %}
+                    <div class="NotifBox">
+                        <h5>Notifications</h5>
+                        <div class="box"></div>
+                        <i class="bi bi-envelope" style="background-color: #ac0000; color: #fff; padding: 7px 10px; border-radius: 50%;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="card-container" class="d-none justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
+        {% include './carteApprenant.html' %}
+    </div>
+
+    <div id="no-certif" class="d-none justify-content-center align-items-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.7);">
+        <div class="bg-white p-4 rounded">
+            <h5>Notification</h5>
+            <p>
+                Vous n'avez pas encore de certificat disponible... <br>
+                Veillez patienter ou contactez le support technique
+            </p>
+            <button class="btn btn-danger" onclick="showNoCertif()">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+
+        function showNoCertif(){
+            const pop_up = document.getElementById('no-certif');
+            pop_up.classList.toggle('d-none')
+            pop_up.classList.toggle('d-flex')
+        }
+
+        function showCard(){
+            const btn = document.getElementById('card-container');
+            btn.classList.toggle('d-none')
+            btn.classList.toggle('d-flex')
+        }
+
+    </script>
+</body>
+</html>
