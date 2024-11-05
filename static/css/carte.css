@@ -1,0 +1,219 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Style de la barre de navigation */
+.navbar{
+    background-color: #333;
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar .links ul{
+    display: flex;
+}
+
+.navbar .links ul li{
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navbar .links ul li a{
+    font-size: 15px;
+    color: #E0FFFF;
+}
+
+.navbar .text{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.navbar .text p{
+    color: #fff;
+    margin-right: 5px;
+}
+
+.navbar .text .icon{
+    color: #E0FFFF;
+}
+
+header{
+    background-color: #FFF;
+    box-shadow: 0 0 3px 0 #000;
+    padding: 10px;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav div{
+    display: flex;
+}
+
+header nav div ul{
+    display: flex;
+}
+
+header nav div ul li{
+    list-style: none;
+    margin-right: 20px;
+}
+
+header nav div ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+header nav .btn{
+    background-color: #0051ff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* Style pour l'accueil */
+.accueil{
+    background-color: #f0f0f0;
+}
+.accueil .container{
+    padding: 50px;
+}
+
+.accueil .container .form-box{
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 2px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 40px;
+}
+
+.accueil .container .form-box h1{
+    font-size: 1.5em;
+    color: #000;
+    text-align: center;
+}
+
+.accueil .container .form-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-bottom: 2px solid #ff00009d;
+    margin: 25px 0;
+}
+
+.accueil .container .input-box label{
+    position: absolute;
+    top: -30%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.accueil .container .input-box input:focus~label,
+.accueil .container .input-box input:valid~label{
+    top: -5px;
+}
+
+.accueil .container .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 12px;
+    padding: 0 35px 0 5px;
+}
+
+.accueil .container .form-box .btn{
+    width: 100%;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.accueil .container .cert{
+    background-color: #f3f3f3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 10px;
+}
+
+.accueil .container .cert .certificat{
+    border: 2px solid #000;
+    border-radius: 30px;
+}
+
+.accueil .container .cert1{
+    background-color: #b1c2db;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 10px;
+    width: 500px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.accueil .container .cert1 .certificat1{
+    border: 1px solid #4d4d4d;
+    border-radius: 30px;
+}
+
+.accueil .container .cert1 .certificat1 .carte{
+    background-image: url(image/Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #00000010;
+    border-radius: 30px;
+}
+
+@media print{
+    body *{
+        visibility: hidden;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    #printDiv, #printDiv *{
+        visibility: visible;
+    }
+    #printDiv{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70%;
+        background-image: url(image/Background.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        background-color: #64646410;
+        border-radius: 30px;
+    }
+    
+    #printDiv .content{
+        padding: 20px 40px;
+    }
+    
+    #printDiv .content .entete{
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+}

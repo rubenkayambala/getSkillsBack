@@ -1,0 +1,131 @@
+.carte img{
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+/* Style pour le certificat */
+/* .container{
+    padding: 30px 0;
+} */
+
+.container .certificat{
+    border: 1px solid #cacaca;
+    border-radius: 30px;
+    padding: 20px;
+    background-image: url(../image/4872987.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #0051ff25;
+}
+
+.bravlogo{
+    background-color: rgba(145, 7, 7, 0.5);
+    padding: 60px 5px;
+    height: 300px;
+    clip-path: polygon(7% 0%, 93% 0%, 93% 50%, 100% 50%, 50% 100%, 0% 50%, 7% 50%);
+}
+
+.container .certificat .motprofil img{
+    max-width: 150px;
+    border-radius: 10px;
+    border: 1px solid #be0000;
+}
+
+.container .certificat .content{
+    background-color: #ffffff9c;
+    border-radius: 70px;
+    border: 1px solid #dd0000;
+}
+
+.container .certificat .content .formations{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.container .certificat .content .formations ul li{
+    font-size: 10px;
+}
+
+.container .certificat .content .textFond div p{
+    font-size: 15px; 
+    color: #fff; 
+    margin-right: 10px; 
+    background-color: #b60000;
+    padding: 2.5px 5px;
+    border-radius: 50%;
+}
+
+/* Style pour le formulaire */
+.container .content1{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .form-box{
+    width: 50%;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 2px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 40px;
+}
+
+.container .form-box h1{
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+}
+
+.container .form-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #ff00009d;
+    margin: 40px 0;
+}
+
+.container .input-box label{
+    position: absolute;
+    top: -30%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.container .input-box input:focus~label,
+.container .input-box input:valid~label{
+    top: -5px;
+}
+
+.container .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 12px;
+    padding: 0 35px 0 5px;
+}
+
+.container .form-box button{
+    width: 100%;
+    padding: 8px;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}

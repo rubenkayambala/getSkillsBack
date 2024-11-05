@@ -1,6 +1,7 @@
-body{
-    margin: 0;
-    padding: 0;
+html, body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 /* Style de la barre de navigation */
@@ -44,11 +45,10 @@ body{
 header{
     background-color: #FFF;
     box-shadow: 0 0 3px 0 #000;
-    padding: 10px;
 }
 
 header a img{
-    width: 90px;
+    width: 50px;
 }
 
 header nav{
@@ -568,7 +568,7 @@ footer .container div ul li a{
 .wrapper{
     position: absolute;
     width: 600px;
-    height: 630px;
+    /* height: 630px; */
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -583,6 +583,7 @@ footer .container div ul li a{
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease ,height .2s ease;
+    z-index: 999;
 }
 
 .wrapper.active-popup{
