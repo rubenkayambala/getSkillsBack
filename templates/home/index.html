@@ -8,10 +8,9 @@
             <p style="color: #fff;">
                 EXPLORER LES TECHNOLOGIE DE L'INFORMATION ET DE LA COMMUNICATION 
             </p>
-
             {% if request.user.is_authenticated %}
             {% else %}
-            <button type="button" class="btnJoin">Nous réjoindre</button>
+            <button type="button" class="btnJoin" onclick="toogleInscriptionForm()">Nous réjoindre</button>
             {% endif %}
         </div>
     </section>
@@ -19,7 +18,7 @@
     <section class="about" id="about">
         <div class="container">
             <h3>
-                About us
+                Apropos de nous
                 <div></div>
             </h3>
             <div class="row px-2">
@@ -34,7 +33,7 @@
                         théorie et pratique pour préparer les apprenants aux défis de leurs 
                         secteurs respectifs.
                     </p>
-                    <a href="About/about.html" class="btn">En savoir plus</a>
+                    <a href="#" class="btn">En savoir plus</a>
                 </div>
             </div>
         </div>
@@ -205,7 +204,7 @@
     </section>
 
     <section class="souvenirs" id="souvenirs">
-        <div class="container" style="padding: 5px 0;">
+        <div class="container my-3" style="padding: 5px 0;">
             <h3 style="text-align: center; margin-top: 10px; color: #fff;">
                 Nos souvenirs
                 <div></div>
@@ -214,8 +213,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="shadow" style="padding: 20px; border-radius: 15px; margin-bottom: 10px; background-color: #fff;">
                         <div style="position: relative;">
-                            <video src="/static/images/presentP2.mp4" id="MaMusique2" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
-                            <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute">
+                            <video src="/static/videos/presentP1.mp4" controls id="MaMusique1" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
+                            <!-- <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute"> -->
                         </div>
                         <h6 style="color: #000; margin-bottom: 0;">Première promotion</h6>
                         <p style="color: #000; font-size: 15px; margin-bottom: 0;">
@@ -227,8 +226,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="shadow" style="padding: 20px; border-radius: 15px; margin-bottom: 10px; background-color: #fff;">
                         <div style="position: relative;">
-                            <video src="/static/images/presentP2.mp4" id="MaMusique2" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
-                            <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute">
+                            <video src="/static/videos/presentP2.mp4" controls id="MaMusique2" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
+                            <!-- <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute"> -->
                         </div>
                         <h6 style="color: #000; margin-bottom: 0;">Deuxième promotion</h6>
                         <p style="color: #000; font-size: 15px; margin-bottom: 0;">
@@ -240,8 +239,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="shadow" style="padding: 20px; border-radius: 15px; margin-bottom: 10px; background-color: #fff;">
                         <div style="position: relative;">
-                            <video src="/static/images/presentP2.mp4" id="MaMusique2" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
-                            <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute">
+                            <video src="/static/videos/presentP3.mp4" controls id="MaMusique3" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
+                            <!-- <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute"> -->
                         </div>
                         <h6 style="color: #000; margin-bottom: 0;">Troisème promotion</h6>
                         <p style="color: #000; font-size: 15px; margin-bottom: 0;">
@@ -253,8 +252,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="shadow" style="padding: 20px; border-radius: 15px; margin-bottom: 10px; background-color: #fff;">
                         <div style="position: relative;">
-                            <video src="/static/images/presentP2.mp4" id="MaMusique2" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
-                            <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute">
+                            <video src="/static/videos/presentP4.mp4" controls id="MaMusique4" style="width: 100%; height: 65%; object-fit: cover; border-radius: 10px;"></video>
+                            <!-- <img src="/static/images/bouton-jouer.png" id="btnplay2" style="width: 50px; top: 35%; left: 40%; position: absolute"> -->
                         </div>
                         <h6 style="color: #000; margin-bottom: 0;">Quatrième promotion</h6>
                         <p style="color: #000; font-size: 15px; margin-bottom: 0;">
