@@ -19,6 +19,10 @@ def Home(request):
     template_name = 'home/index.html'
     return render(request, template_name, {'have_certif': have_certif})
 
+def About(request):
+    template_name = 'home/about.html'
+    return render(request, template_name)
+
 @login_required
 class addCarte(CreateView):
     model = Certificat

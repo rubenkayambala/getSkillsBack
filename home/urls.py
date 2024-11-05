@@ -5,9 +5,9 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.Home, name='home'),
+    path('about/', views.About, name='about'),
     path('manage/', views.Dash, name='dash'),
 
-    # path('carte-form/', views.addCarte.as_view(), name='carte_form'),
     path('carte-form/', views.CardForm, name='carte_form'),
     path('carte/', views.Carte, name='carte'),
     path('my-certificat/<int:id>', views.Certif, name='certif'),
