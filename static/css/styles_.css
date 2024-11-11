@@ -1,0 +1,1014 @@
+html, body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+/* Style de la barre de navigation */
+.navbar{
+    background-color: #333;
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar .links ul{
+    display: flex;
+}
+
+.navbar .links ul li{
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navbar .links ul li a{
+    font-size: 15px;
+    color: #E0FFFF;
+}
+
+.navbar .text{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.navbar .text p{
+    color: #fff;
+    margin-right: 5px;
+}
+
+.navbar .text .icon{
+    color: #E0FFFF;
+}
+
+header{
+    background-color: #FFF;
+    box-shadow: 0 0 3px 0 #000;
+}
+
+header a img{
+    width: 50px;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav div{
+    display: flex;
+}
+
+header nav div ul{
+    display: flex;
+}
+
+header nav div ul li{
+    list-style: none;
+    margin-right: 20px;
+}
+
+header nav div ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+header nav .btn{
+    background-color: #0051ff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* Menu burger*/
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu .line {
+    width: 25px;
+    height: 2px;
+    background-color: #ff0000;
+    margin: 2px 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+  }
+  
+  .nav-links a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .burger-menu {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #333;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+
+/* Process */
+.process{
+    position: absolute;
+    width: 45%;
+    background-color: #fff;
+    border-radius: 20px;
+    left: 35%;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease ,height .2s ease;
+}
+
+.process .content{
+    text-align: center;
+}
+
+.process .content h2{
+    text-align: center;
+    color: #000;
+}
+
+.process .content a{
+    background-color: #ff0000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.process .icon-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: #ff0000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Style de la section d'accueil */
+.accueil{
+    background-image: url(/static/images/Convertis/Back_One.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #000000ad;
+    text-align: center;
+}
+
+.accueil .container{
+    padding: 20px 0;
+}
+
+.accueil .container h1{
+    color: #fff;
+    text-align: center;
+    font-size: 90px;
+    margin-top: 16%;
+}
+
+.accueil .container button{
+    background-color: #0051ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* Style de la section d'à propos */
+.about{
+    background-color: #f5f5f5;
+}
+
+.about .container{
+    padding: 25px 0;
+}
+
+.about .container h3{
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+}
+
+.about .container .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about .about-logo{
+    width: 100%;
+}
+@media screen and (max-width: 767px) {
+    .about .about-logo{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .about .about-logo{
+        width: 70%;
+    }
+}
+
+.about .container .row .infos h5{
+    color: #ff0000;
+    font-size: 22px;
+}
+
+.about .container .row .infos .btn{
+    background-color: #ff0000;
+    color: #fff;
+}
+
+
+/* Style de la section de nos formations */
+.formations{
+    background-image: url(/static/images/Convertis/Back_Two.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #000000d3;
+    padding-bottom: 50px;
+}
+
+.formations .container .row #CourseBox{
+    padding: 2px; 
+    margin-right: 30px;
+    margin-bottom: 25px; 
+    width: 22.4%;
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around;
+    border: 1px solid #ff0000;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.formations .container .row #CourseBox:hover{
+    width: 22.9%;
+    color: #ff0000;
+}
+
+.formations .container .row #CourseBox .icon{
+    font-size: 40px; 
+    color: #970000;
+}
+
+.formations .container h3{
+    color: #fff;
+}
+
+.formations .container .row #CourseBox p{
+    font-size: 14px;
+}
+
+.formations .container .row #CourseBox .btn{
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.formations .container a{
+    text-decoration: none;
+    text-align: center;
+    color: #ff0000;
+    background-color: #fff;
+    border: 1px solid #ff0000;
+    padding: 5px 10px;
+    margin-left: 500px;
+    border-radius: 5px;
+    transition: .5s ease;
+}
+
+.formations .container a:hover{
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+}
+
+/* Styel du banner */
+.banner .container{
+    background-color: #fff; 
+    box-shadow: 0 0 10px #575757; 
+    width: 75%; 
+    height: 120px; 
+    border-radius: 30px; 
+    top: 103.5em;
+    left: 180px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px;
+    margin-top: -40px;
+}
+
+.banner .container .content{
+    text-align: center;
+    width: 400px;
+}
+
+.banner .container .content p{
+    font-size: 10px;
+    color: #ff0000bd;
+}
+
+.banner .container div span{
+    height: 50px; height: 50px; 
+    border-right: 1px solid #ff0000; 
+    margin: 0px 15px; 
+    display: block;
+}
+
+/* Programmes */
+.programme .container h3{
+    text-align: center; 
+    margin-top: 100px;
+}
+
+.programme .container .row{
+    padding: 20px 0;
+}
+
+.programme .container .row #CourseBox{
+    padding: 20px; 
+    width: 45.5%; 
+    margin-right: 30px; 
+    margin-left: 25px; 
+    margin-bottom: 30px;
+}
+
+.programme .container .row #CourseBox .niv{
+    background-color: #ff0000; 
+    width: 100px; 
+    padding: 0 5px; 
+    position: absolute; 
+    left: 35%; 
+    top: 140em; 
+    border-radius: 5px; 
+    text-align: center; 
+    box-shadow: 0 0 5px #000;
+}
+
+.programme .container .row #CourseBox .niv p{
+    color: #fff; 
+    margin-top: 5px; 
+    margin-bottom: 5px;
+}
+
+.souvenirs{
+    background-color: #333;
+}
+
+.souvenirs .container #CourseBox img{
+    width: 35px; 
+    position: absolute; 
+    z-index: 1; 
+    cursor: pointer; 
+    background-color: #fff; 
+    border-radius: 50%;
+}
+
+/* Style de la section rejoindre */
+.message{
+    background-image: url(/static/images/Convertis/Back_Two.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #0051ffcc;
+}
+.message .container{
+    padding: 50px;
+}
+
+.message .container .form-box{
+    width: 600px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    backdrop-filter: blur(80px);
+    box-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+    padding: 40px;
+}
+
+@media screen and (max-width: 756px) {
+    .message .container .form-box {
+        padding: 15px;
+    }
+}
+
+.message .container .form-box.active-popup{
+    transform: scale(1);
+}
+
+.message .container .form-box.active{
+    height: 480px;
+}
+
+.message .container .form-box.wrapper .form-box{
+    width: 100%;
+    padding: 30px;
+}
+
+.message .container .form-box.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.message .container .form-box.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.message .container .form-box .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.message .container .form-box .icon-close img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.message .container .form-box .form-box h2{
+font-size: 2em;
+color: #000;
+text-align: center;
+}
+.message .container .form-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #ff0000;
+    margin: 30px 0;
+}
+
+.message .container .input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.message .container .input-box input:focus~label,
+.message .container .input-box input:valid~label{
+    top: -5px;
+}
+
+.message .container .input-box textarea:focus~label,
+.message .container .input-box textarea:valid~label{
+    top: -5px;
+    border: none;
+}
+
+.message .container .input-box input,
+.message .container .input-box textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.message .container .input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #000;
+    line-height: 57px;
+}
+
+.message .container .btn{
+    width: 100%;
+    height: 45px;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Style du footer */
+footer{
+    background-color: #333;
+}
+
+footer .container p{
+    color: #f5f5f5;
+    text-align: center;
+}
+
+footer .container div{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .container div ul{
+    display: flex;
+}
+
+footer .container div ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+footer .container div ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Le formulaire d'inscription */
+.wrapper{
+    position: absolute;
+    width: 600px;
+    /* height: 630px; */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    background-color: #f3f3f3;
+    backdrop-filter: blur(80px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    left: 30em;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease ,height .2s ease;
+    z-index: 999;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 480px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 30px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .icon-close img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.wrapper .form-box h2{
+font-size: 2em;
+color: #000;
+text-align: center;
+}
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #ff0000;
+    margin: 30px 0;
+}
+
+.wrapper .input-box label{
+    position: absolute;
+    top: 0%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.wrapper .input-box input:focus~label,
+.wrapper .input-box input:valid~label{
+    top: -5px;
+}
+
+.wrapper .input-box textarea:focus~label,
+.wrapper .input-box textarea:valid~label{
+    top: -5px;
+    border: none;
+}
+
+.wrapper .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.wrapper .input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #000;
+    line-height: 57px;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #ff0000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.process{
+    display: none;
+    width: 450px;
+    background-color: #fff;
+    border-radius: 20px;
+    left: 35%;
+    top: 35%;
+    padding: 40px;
+    box-shadow: 0 0 10px #000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease ,height .2s ease;
+}
+
+.process .content{
+    text-align: center;
+}
+
+.process .content h2{
+    text-align: center;
+    color: #000;
+}
+
+.process .content a{
+    background-color: #ff0000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.process .icon-close{
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: #ff0000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper.active-popup, .process.active-process {
+    display: block;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #000;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #aaa;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -20px;
+    left: 10px;
+    color: #000;
+    font-size: 12px;
+}
+
+.connexion{
+    display: none;
+    width: 50%;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 20px;
+    left: 20%;
+    top: 25%;
+    padding: 30px;
+    box-shadow: 0 0 10px #000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.connexion.active-connect{
+    display: block;
+}
+
+.connexion .content{
+    text-align: center;
+}
+
+.connexion .content h2{
+    text-align: center;
+    color: #000;
+}
+
+.connexion input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.connexion button{
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+
+}
+
+/* Styles pour la boîte de dialogue personnalisée */
+.custom-alert,
+.dialogue{
+    display: none;
+    position: fixed;
+    text-align: center;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.custom-alert h2,
+.dialogue h2{
+    color: #000;
+    font-size: 25px;
+}
+
+.custom-alert p,
+.dialogue p{
+    font-size: 12px;
+}
+
+.custom-alert button,
+.dialogue button{
+    margin-top: 10px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0051ff;
+    color: #fff;
+    width: 35%;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#myBtn{
+display: none;
+position: fixed;
+bottom: 20px;
+right: 50%;
+z-index: 99;
+border: none;
+outline: none;
+background-color: #ff0000;
+color: #fff;
+cursor: pointer;
+padding: 10px 20px;
+border-radius: 50px;
+font-size: 18px;
+}
+#myBtn:hover{
+    background-color: #ff0000;
+}
+
+
+
+.manage-form label {
+    display: block;
+}
+
+.manage-form label input, .manage-form label textarea, .manage-form label select {
+    display:block;
+    width:100%;
+    padding:.3rem .75rem;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    color:var(--bs-body-color);
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color:var(--bs-body-bg);
+    background-clip:padding-box;
+    border:1px solid #555;
+    border-radius:8px;
+    transition:border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+
+
+@media (max-width: 1200px){
+    body{
+        width: 100%;
+    }
+    .navbar{
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    header a img{
+        width: 45px;
+    }
+    .accueil .container h1{
+        font-size: 40px;
+        margin-top: 150px;
+    }
+    .accueil .container p{
+        font-size: 12px;
+    }
+    .about .container .row .infos{
+        text-align: center;
+    }
+    .about .container .row .infos h5{
+        text-align: center;
+        font-size: 15px;
+    }
+    .about .container .row .infos p{
+        text-align: center;
+        font-size: 12px;
+    }
+    .banner{
+        display: none;
+    }
+    .process{
+        width: 90%;
+        height: 60%;
+        left: 5%;
+        top: 20%;
+    }
+    .wrapper{
+        width: 90%;
+        height: 80%;
+        left: 5%;
+        top: 12%;
+    }
+    .wrapper .form-box h2{
+        font-size: 20px;
+    }
+    .wrapper .form-box p{
+        font-size: 12px;
+    }
+    .wrapper .input-box label{
+        font-size: 12px;
+    }
+    .wrapper .input-box input{
+        font-weight: 200;
+        font-size: 12px;
+    }
+    .wrapper .input-box{
+        height: 25px;
+        margin: 20px 0;
+    }
+    .wrapper .btn{
+        height: 30px;
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
