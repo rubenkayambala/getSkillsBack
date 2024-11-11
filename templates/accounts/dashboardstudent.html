@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/dbord.css">
     <title>GET SKILLS CLASS | Profil étudiant</title>
 </head>
 <body>
@@ -29,11 +29,11 @@
             </div>
         </div>
     </div>
-    <header>
+    <header> 
         <div class="container">
             <nav>
                 <a href="{% url 'home:home' %}"><img src="/static/images/contents/logo_get_skills_class.png" alt="" width="70px"></a>
-                <p style="font-size: 25px; color: #000;">Profil étudiant</p>
+                <span style="font-size: 25px; color: #000;">Profil étudiant</span>  
                 <div style="align-items: center;">
                     <!-- <a href="#" class="btn btn-sm btn-danger p-1" style="background-color: #ac0000 !important;">Imprimer mes certificat</a> &nbsp; &nbsp; -->
                     <span style="font-size: 12px; color: #000;">{{profile.first_name}} {{profile.last_name}}</span>, &nbsp;
@@ -46,8 +46,13 @@
 
     <section class="accueil">
         <div class="row">
-            <div class="col-lg-3">
+            <div id="menuBar" class="hideMenuDash col-lg-3">
                 <div class="content1">
+                    <div class="col-1 d-lg-none">
+                        <div style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; border-radius: 50%; padding: 15px; background-color: #ac0000; cursor: pointer;" onclick="dashMenu()">
+                            <i class="bi bi-menu-button text-white" id="profil"></i>
+                        </div>
+                    </div>
                     <div>
                         <h3>Projets</h3>
                         <ul>
@@ -65,6 +70,12 @@
                             <li>Atélier du développement personnel <a href="#">Participer <i class="bi bi-link-45deg"></i></a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <div class="col-1 d-lg-none">
+                <div style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; border-radius: 50%; padding: 15px; background-color: #ac0000; cursor: pointer;" onclick="dashMenu()">
+                    <i class="bi bi-menu-button text-white" id="profil"></i>
                 </div>
             </div>
 
@@ -110,7 +121,8 @@
 
             <div class="col-lg-3">
                 <div class="content3">
-                    <i class="bi bi-person-circle" id="profil"></i>
+                    <!-- <i class="bi bi-person-circle" id="profil"></i> -->
+                    <img src="{{profile.picture.url}}" width="160px" alt="Image" style="background-color: #ac0000; padding: 10px;">
                     <h6 style="cursor: pointer;" onclick="showCard()"><u>Voir ma carte</u></h6>
                     {% if has_cert %}
                     <h6 style="cursor: pointer;"><u><a href="{% url 'home:certif' profile.id %}">Voir mon certificat</a></u></h6>
@@ -143,6 +155,12 @@
     </div>
 
     <script>
+
+        function dashMenu(){
+            const menuBar = document.getElementById('menuBar');
+            menuBar.classList.toggle('hideMenuDash');
+            menuBar.classList.toggle('showMenuDash');
+        }
 
         function showNoCertif(){
             const pop_up = document.getElementById('no-certif');

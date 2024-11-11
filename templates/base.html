@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/static/css/dashboard.css">
     <link rel="stylesheet" href="/static/css/carte.css">
     <link rel="stylesheet" href="/static/css/certificat.css">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles_.css">
     <title>Get Skills CLass | Vitrine</title>
 </head>
 
@@ -145,7 +145,7 @@
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'accounts:profile' request.user.id %}" class="btn" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;">
                     <i class="bi bi-person-circle"></i>
-                    <small>{{request.user.username}}</small>
+                    <small style="font-size: 1.2rem;">{{request.user.username}}</small>
                 </a>
                 {% else %}
                 <button class="btn" onclick="toogleConnexionForm()" style="font-size: 30px; padding: 5px 10px; background: none; color: #000;">
