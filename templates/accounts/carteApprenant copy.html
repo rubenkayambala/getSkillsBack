@@ -1,0 +1,32 @@
+    <div class="cert1">
+        <div class="certificat1">
+            <div class="carte" id="printDiv">
+                <div class="content" style="padding: 20px 40px;">
+                    <div class="entete" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="font-size: 15px; text-align: center;">GET SKILLS CLASS</h4>
+                            <h4 style="font-size: 0.7rem; text-align: center;">Carte d'apprenant</h4>
+                        </div>
+                        <img src="/static/images/contents/logo_get_skills_class.png" alt="" width="70px">
+                    </div>
+                    <div class="infos" style="display: flex; justify-content: space-around;">
+                        <div class="profil" style=" margin-top: 10px; height: 110px; width: 100px; background-color: #ffffffbb; padding: 10px 5px;">
+                            <img src="{{profile.picture.url}}" alt="Image sélectionnée" id="imageAffichee" width="90px" height="90px" style="object-fit: cover;">
+                        </div>
+                        <div class="text" style="margin-top: 5px; padding: 10px;">
+                            <h6 style="font-size: 10px;">Nom : <span id="nom2">{{profile.last_name}}</span></h6>
+                            <h6 style="font-size: 10px;">Post-nom : <span id="postnom2">{{profile.post_name}}</span></h6>
+                            <h6 style="font-size: 10px;">Prénom : <span id="prenom2">{{profile.first_name}}</span></h6>
+                            <h6 style="font-size: 10px;">Matricule : <span id="matricule2">{{profile.matricule}}</span></h6>
+                            <h6 style="font-size: 10px;">Adresse : <span id="adresse2">{{profile.adress}}</span></h6>
+                        </div>
+                    </div>
+                    <div class="end" style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Date d'éxpiration : 20/12/2024</p>
+                        <img src="image/QRcode.jpg" alt="" width="40px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-danger m-3" onclick="showCard()">Fermer</button>
+    </div>
