@@ -221,11 +221,6 @@ header nav .btn{
     margin-top: 20px;
 }
 
-/* .cert1 .certificat1{
-    border: 1px solid #4d4d4d;
-    border-radius: 30px;
-} */
-
 .cert1 .certificat1 .carte{
     background-image: url(/static/images/contents/Background.jpg);
     background-position: center;
