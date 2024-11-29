@@ -33,13 +33,10 @@
     <header> 
         <div class="container">
             <nav>
-                <a href="{% url 'home:home' %}"><img src="/static/images/contents/logo_get_skills_class.png" alt="" width="70px"></a>
+                <a href="{% url 'home:home' %}"><img src="/static/images/contents/logo_get_skills_class.png" alt="" width="70px" height="80px" style="object-fit: cover; object-position: top;"></a>
                 <span style="font-size: 18px; color: #000;">{{profile.first_name}} {{profile.last_name}}</span>  
-                <div style="align-items: center;">
-                    <!-- <a href="#" class="btn btn-sm btn-danger p-1" style="background-color: #ac0000 !important;">Imprimer mes certificat</a> &nbsp; &nbsp; -->
-                    <!-- <span style="font-size: 12px; color: #000;"></span>, &nbsp; -->
+                <div style="align-items: center;">          
                     <a href="{% url 'accounts:logout' %}"><small>deconnexion</small></a>
-                    <!-- <i class="bi bi-person-circle" style="font-size: 25px; padding: 5px 10px; background: none; color: #ac0000;"></i> -->
                 </div>
             </nav>
         </div>
