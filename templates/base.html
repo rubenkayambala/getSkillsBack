@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
     {% block style %}{% endblock %}
     <link rel="stylesheet" href="/static/css/carte.css">
-    <link rel="stylesheet" href="/static/css/appStyles.css">            
+    <link rel="stylesheet" href="/static/css/app_style.css">
     <title>Get Skills CLass | Vitrine</title>               
 </head>
 
@@ -176,6 +176,14 @@
 
     {% block content %}{% endblock %}
 
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+    <div class="d-flex justify-content-center align-items-center bg-primary p-2 rounded" style="position: fixed; right: 5%; bottom: 5%;">
+        <a href="{% url 'dashboard:dashboard' %}" class="text-white">Tableau de bord</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
     <footer>
         <div class="container">
             <div class="final">
@@ -192,6 +200,17 @@
     </footer>
 
     <button onclick="topFunction()" id="myBtn" class="btn btn-primary">&uparrow;</button>
+
+    {% if messages %}
+    <div id="public-alert" style="position: fixed; width: 100%; padding: 10px; bottom: 30px; display: flex; justify-content: center; align-items: center;">
+        {% for message in messages %}
+        <div class="alert alert-success px-5">
+            <small>{{message}}</small> &nbsp;&nbsp;&nbsp;&nbsp;
+            <b onclick="closePublicAlert()" style="cursor: pointer;">x</b>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <script>
         let mybutton = document.getElementById("myBtn");
@@ -330,6 +349,10 @@
                     MaMusique4.pause();
                     btnplay4.src = "asset/images/bouton-jouer.png"
             }
+        }
+
+        function closePublicAlert(){
+            document.getElementById('public-alert').style.display='none'
         }
     </script>
 

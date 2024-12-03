@@ -137,9 +137,11 @@
         </div>
     </section>
 
+    {% if profile.carte_apprenant %}
     <div id="card-container" class="d-none justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
         {% include './carteApprenant.html' %}
     </div>
+    {% endif %}
 
     <div id="no-certif" class="d-none justify-content-center align-items-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.7);">
         <div class="bg-white p-4 rounded">

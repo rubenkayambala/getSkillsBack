@@ -1,0 +1,42 @@
+{% extends '../base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+{% endblock %}
+
+{% block content %}
+
+    <section class="about px-2" style="
+    background-image: url(/static/images/contents/logo_get_skills_class.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #000000ad;
+    text-align: center;">
+        <div class="container">
+            <h1 class="text-white"> Tableau de bord </h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-3">
+                <section class="dash-menu">
+                    <div class="row flex-column">
+                        <a href="{% url 'dashboard:dashboard' %}" class="mb-3 btn btn-primary">Tous les utilisateurs</a>
+                        <a href="{% url 'dashboard:see-cards' %}" class="mb-3 btn btn-primary">Gestion des cartes</a>
+                        <a href="{% url 'dashboard:see-certificates' %}" class="mb-3 btn btn-primary">Gestion des certificats</a>
+                        <a href="#" class="mb-3 btn btn-primary">Tous les utilisateurs</a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-9">
+                <section>
+                    {% block data %}{% endblock %}
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

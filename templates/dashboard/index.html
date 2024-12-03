@@ -1,0 +1,103 @@
+{% extends './base_admin.html' %}
+
+{% block data %}
+
+    <div class="wrapper">
+        <div class="form-box" id="myForm">
+            <div class="d-flex justify-content-between mb-2">
+                <h4 class="m-0">Ajouter un nouvel utilisateur</h4>
+                <button class="btn btn-sm btn-danger py-0 px-2" onclick="toogleInscriptionForm()" style="width: 60px;">Fermer</button>
+            </div>
+            <form action="{% url 'dashboard:add-user' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-box"> 
+                    <input type="text" name="last_name" id="name" autocomplete="name" required placeholder="Votre nom">
+                    <label for="name">Nom</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="text" name="post_name" id="midname" autocomplete="midname" required placeholder="Votre post-nom">
+                    <label for="midname">Post-nom</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="first_name" id="first" autocomplete="first" required placeholder="Votre prénom">
+                    <label for="first">Prénom</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="date" name="birthday" id="birth" autocomplete="birth" required placeholder="Votre date de naissance">
+                    <label for="birth">Date de naissance</label>
+                </div>
+                <div class="input-box"> 
+                    <input type="text" name="adress" id="adresse" autocomplete="adresse" required placeholder="Votre résidence">
+                    <label for="adresse">Adresse actuelle</label> 
+                </div>
+                <div class="input-box">
+                    <input type="text" name="username" id="user" autocomplete="user" required placeholder="Votre nom d'utilisateur">
+                    <label for="user">Nom d'utilisateur</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="Votre adresse mail">
+                    <label for="email">Adresse Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="phone" id="phone" autocomplete="phone" required placeholder="Votre numéro de téléphone">
+                    <label for="num">Téléphone</label>
+                </div>
+                <div class="input-box">
+                    <input type="file" name="picture" id="picture" autocomplete="picture" required>
+                    <label for="num">Photo</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" id="password1" autocomplete="password" required placeholder="Votre mot de passe">
+                    <label for="password">Mot de passe</label>
+                </div>
+                <button type="submit" class="btn btnLogin-popup">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center pb-3">
+            <h4 class="m-0">Tous les utilisateurs</h4>
+            <button class="btn btn-sm btn-primary" onclick="toogleInscriptionForm()">Ajouter un utilisateur</button>
+        </div>
+        {% if users %}
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td>Photo</td>
+                    <td>Nom</td>
+                    <td>Post-nom</td>
+                    <td>Prénom</td>
+                    <td>Email</td>
+                    <td>Date de naissance</td>
+                    <td>Téléphone</td>
+                    <td>Admin</td>
+                </tr>
+                {% for item in users %}
+                <tr>
+                    <td>
+                        <img src="{{item.picture.url}}" alt="photo {{item.last_name}} {{item.post_name}} {{item.first_name}}" width="50px">
+                    </td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <td>{{item.post_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.birthday}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>
+                        {% if item.is_superuser %}
+                        Oui
+                        {% else %}
+                        Non
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <h3 class="text-muted"><i>Aucun utilisateur enregistré pour l'instant</i></h3>
+        {% endif %}
+    </div>
+
+{% endblock %}

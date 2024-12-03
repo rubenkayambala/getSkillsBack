@@ -8,6 +8,8 @@ class CustomUser(AbstractUser):
     adress = models.CharField(('adress'), max_length=100)
     phone = models.CharField(('phone'), max_length=15)
     picture = models.ImageField(('picture'), upload_to='picture/')
+    carte_apprenant = models.BooleanField(default=False)
+    certificat_apprenant = models.BooleanField(default=False)
 
     objects = UserManager()
 

@@ -1,10 +1,14 @@
-{% extends '../base.html' %}
-
-{% block style %}
-<link rel="stylesheet" href="/static/css/certificat.css">
-{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/certificat.css">
+    <title>Carte</title>
+</head>
+<body>
     <div class="container" style="padding: 20px 0;">
         <div class="certificat" style="padding: 20px;">
             <div class="content" style="text-align: center;">
@@ -122,4 +126,5 @@
         document.getElementById('mat').textContent = localStorage.getItem('mat');
         document.getElementById('image').src = localStorage.getItem('image');
     </script>
-{% endblock %}
+</body>
+</html>
