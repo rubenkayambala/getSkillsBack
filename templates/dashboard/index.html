@@ -68,6 +68,7 @@
                     <td>Nom</td>
                     <td>Post-nom</td>
                     <td>Prénom</td>
+                    <td>Matricule</td>
                     <td>Email</td>
                     <td>Date de naissance</td>
                     <td>Téléphone</td>
@@ -78,9 +79,14 @@
                     <td>
                         <img src="{{item.picture.url}}" alt="photo {{item.last_name}} {{item.post_name}} {{item.first_name}}" width="50px">
                     </td>
-                    <td>{{item.first_name}}</td>
                     <td>{{item.last_name}}</td>
                     <td>{{item.post_name}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>
+                        <div class="d-flex">
+                            {{item.matricule}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'dashboard:add-matricule' item.id %}"><i class="bi bi-pen text-primary"></i></a>
+                        </div>
+                    </td>
                     <td>{{item.email}}</td>
                     <td>{{item.birthday}}</td>
                     <td>{{item.phone}}</td>

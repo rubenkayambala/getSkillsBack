@@ -57,7 +57,7 @@
 
     <div class="container">
         <div class="d-flex justify-content-between align-items-center pb-3">
-            <h4 class="m-0">Gestion des cartes</h4>
+            <h4 class="m-0">Gestion des certificats</h4>
             <!-- <button class="btn btn-sm btn-primary" onclick="toogleInscriptionForm()">Ajouter un utilisateur</button> -->
         </div>
         {% if users %}
@@ -76,10 +76,10 @@
                     </td>
                     <td>{{profile.last_name}} {{profile.post_name}} {{profile.first_name}}</td>
                     <td>
-                        <button class="btn btn-sm btn-primary" onclick="showCard()">Voir la carte</button>
+                        <a href="{% url 'dashboard:view-certificate' profile.id %}" class="btn btn-sm btn-primary">Voir le certificat</a>
                     </td>
                     <td>
-                        {% if profile.carte_apprenant %}
+                        {% if profile.certificat_apprenant %}
                         <div class="d-flex">
                             <span>Oui</span> &nbsp;&nbsp;&nbsp;
                             <form action="{% url 'dashboard:toogle-view-user' %}" method="post">
@@ -91,7 +91,7 @@
                         {% else %}
                         <div class="d-flex">
                             <span>Non</span> &nbsp;&nbsp;&nbsp;
-                            <form action="{% url 'dashboard:toogle-view-user' %}" method="post">
+                            <form action="{% url 'dashboard:toogle-view-certificat' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" value="{{profile.id}}" name="userId">
                                 <button type="submit" class="btn btn-sm btn-success p-1">Activer</button>
@@ -100,11 +100,9 @@
                         {% endif %}
                     </td>
                 </tr>
-                <tr>
-                    <div id="card-container" class="d-none justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
-                        {% include '../accounts/carteApprenant.html' %}
-                    </div>
-                </tr>
+                <div id="card-container" class="d-none justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
+                    {% include '../accounts/carteApprenant.html' %}
+                </div>
                 {% endfor %}
             </table>
         </div>
@@ -115,7 +113,7 @@
     </div>
 
     <script>
-        function showCard(){
+        function showCertificat(){
             const btn = document.getElementById('card-container');
             btn.classList.toggle('d-none')
             btn.classList.toggle('d-flex')

@@ -1,0 +1,14 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <div class="container p-5">
+        <div class="d-flex justify-content-center py-5">
+            <form action="{% url 'dashboard:add-matricule' profile.id %}" method="post" style="max-width: 25rem;">
+                {% csrf_token %}
+                <h4>Matricule de {{profile.last_name}} {{profile.post_name}} {{profile.first_name}}</h4>
+                <input type="text" name="matricule" id="matricule" class="form-control" placeholder="Matricule" required>
+                <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

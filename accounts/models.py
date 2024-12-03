@@ -10,6 +10,7 @@ class CustomUser(AbstractUser):
     picture = models.ImageField(('picture'), upload_to='picture/')
     carte_apprenant = models.BooleanField(default=False)
     certificat_apprenant = models.BooleanField(default=False)
+    matricule = models.CharField(max_length=20, default='00000000000')
 
     objects = UserManager()
 

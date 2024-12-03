@@ -67,10 +67,19 @@ def ToogleViewCard(request):
 
 @login_required
 def SeeCertificates(request):
-    template_name = 'dashboard/certificats.html'
+    template_name = 'dashboard/certificates.html'
     users = CustomUser.objects.all()
     context = {
         'users': users,
+    }
+    return render(request, template_name, context)
+
+@login_required
+def ViewCertificate(request, id):
+    template_name = 'dashboard/certificat.html'
+    user = get_object_or_404(CustomUser, id=id)
+    context = {
+        'user': user,
     }
     return render(request, template_name, context)
 
@@ -85,3 +94,17 @@ def ToogleViewCertificates(request):
         messages.success(request, f'Modification effectuée...')
         return redirect('dashboard:see-certificates')
     return render(request, template_name)
+
+
+@login_required
+def AddMatricule(request, id):
+    template_name = 'dashboard/addMatricule.html'
+    profile = get_object_or_404(CustomUser, id=id)
+    if request.method == 'POST':
+        profile.matricule = request.POST.get('matricule')
+        profile.save()
+        return redirect('dashboard:dashboard')
+    context = {
+        'profile': profile,
+    }
+    return render(request, template_name, context)
