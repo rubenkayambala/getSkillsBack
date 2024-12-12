@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Formation, Album, Certificat
+from .models import Formation, Album, Certificat, Notification
 from accounts.models import CustomUser
 from django.contrib import messages
 from django.urls import reverse

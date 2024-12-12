@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from accounts.models import CustomUser
-from home.models import Formation, Album, Certificat
+from home.models import Formation, Album, Certificat, Notification
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.urls import reverse
@@ -31,6 +31,7 @@ def AddUser(request):
             adress=request.POST.get('adress'),
             phone=request.POST.get('phone'),
             picture=request.FILES.get('picture'),
+            is_superuser=request.POST.get('superuser'),
         )
         
         # Utilisez set_password pour hacher le mot de passe
@@ -41,7 +42,6 @@ def AddUser(request):
         return redirect('dashboard:dashboard')
     
     return render(request, template_name)
-
 
 @login_required
 def SeeCards(request):
@@ -64,7 +64,6 @@ def ToogleViewCard(request):
         return redirect('dashboard:see-cards')
     return render(request, template_name)
 
-
 @login_required
 def SeeCertificates(request):
     template_name = 'dashboard/certificates.html'
@@ -75,11 +74,11 @@ def SeeCertificates(request):
     return render(request, template_name, context)
 
 @login_required
-def ViewCertificate(request, id):
+def ViewCertificate(request, pk):
     template_name = 'dashboard/certificat.html'
-    user = get_object_or_404(CustomUser, id=id)
+    profile = get_object_or_404(CustomUser, pk=pk)
     context = {
-        'user': user,
+        'profile': profile,
     }
     return render(request, template_name, context)
 
@@ -95,7 +94,6 @@ def ToogleViewCertificates(request):
         return redirect('dashboard:see-certificates')
     return render(request, template_name)
 
-
 @login_required
 def AddMatricule(request, id):
     template_name = 'dashboard/addMatricule.html'
@@ -106,5 +104,37 @@ def AddMatricule(request, id):
         return redirect('dashboard:dashboard')
     context = {
         'profile': profile,
+    }
+    return render(request, template_name, context)
+
+@login_required
+def receiverNotification(request):
+    template_name = 'dashboard/receiverNotification.html'
+    users = CustomUser.objects.all()
+    context = {'users': users}
+    return render(request, template_name, context)
+
+@login_required
+def sendNotification(request, id):
+    template_name = 'dashboard/sendNotification.html'
+    receiver_id = get_object_or_404(CustomUser, id=id)
+    if request.method == "POST":
+        # Créer un utilisateur avec les données du formulaire
+        notif = Notification(
+            sender=request.user,
+            receiver=receiver_id,
+            content=request.POST.get('content'),
+        )
+        notif.save()
+        messages.success(request, "Notification envoyé avec success")
+        return redirect('dashboard:see-notifications')
+    return render(request, template_name)
+
+@login_required
+def seeNotifications(request):
+    template_name = 'dashboard/notifications.html'
+    notifs = Notification.objects.all()
+    context = {
+        'notifs': notifs,
     }
     return render(request, template_name, context)

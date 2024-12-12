@@ -4,6 +4,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import CustomUser
+from home.models import Notification
 
 
 def Register(request):
@@ -73,4 +74,9 @@ def Logout(request):
 def Profile(request, id):
     template_name = 'accounts/dashboardstudent.html'
     profile = get_object_or_404(CustomUser, id=id)
-    return render(request, template_name, {'profile': profile})
+    notifications = Notification.objects.filter(receiver=id).order_by('-created_at')
+    context = {
+        'profile': profile,
+        'notifications': notifications,
+    }
+    return render(request, template_name, context)

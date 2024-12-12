@@ -43,3 +43,12 @@ class Certificat(models.Model):
 
     def __str__(self):
         return f'{self.full_name} - {self.matricule}'
+
+class Notification(models.Model):
+    sender = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='sender')
+    receiver = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='receiver')
+    content = models.TextField()
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.receiver} : {self.content}'
