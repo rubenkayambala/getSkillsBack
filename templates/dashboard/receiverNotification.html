@@ -1,0 +1,12 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <div class="container p-5">
+        <div class="py-5">
+            <h3>Envoyer une notification à</h3>
+            {% for user in users %}
+            <h5><a href="{% url 'dashboard:send-notification' user.id %}" class="text-dark">{{user.last_name}} {{user.post_name}} {{user.first_name}}</a></h5>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
